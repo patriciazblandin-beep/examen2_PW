@@ -37,12 +37,12 @@
 
                     <div class="col-md-6">
                         <label class="form-label fw-bold">Contacto (Asesor Comercial) *</label>
-                        <input type="text" name="contacto" class="form-control" value="{{ old('contacto') }}" placeholder="Ej: Ing. Carlos Pérez" required>
+                        <input type="text" name="contacto" class="form-control" value="{{ old('contacto') }}" placeholder="Ej: Ing. Patricia Blandin" required>
                     </div>
 
                     <div class="col-md-6">
                         <label class="form-label fw-bold">Teléfono (8 dígitos) *</label>
-                        <input type="text" name="telefono" class="form-control" maxlength="8" value="{{ old('telefono') }}" placeholder="Ej: 98765432" required>
+                        <input type="text" name="telefono" class="form-control" maxlength="8" value="{{ old('telefono') }}" placeholder="Ej: 98786655" required>
                     </div>
 
                     <div class="col-md-4">
