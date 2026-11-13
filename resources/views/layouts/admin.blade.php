@@ -13,10 +13,9 @@
         <link href="{{ asset('sb-admin/css/styles.css') }}" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
-        <!-- ESTILO PARA AJUSTAR LA BARRA LATERAL FIJA Y EL CONTENIDO -->
         <style>
             body {
-                padding-top: 56px; /* Altura de la barra superior */
+                padding-top: 56px;
             }
             #layoutSidenav_nav {
                 position: fixed;
@@ -42,7 +41,6 @@
                 color: #1f2937 !important;
             }
 
-            /* 2. Textos, títulos y enlaces del menú lateral con color oscuro legible */
             .sb-sidenav-dark .sb-sidenav-menu-heading {
                 color: #374151 !important;
                 font-weight: bold;
@@ -55,13 +53,11 @@
                 background-color: rgba(0, 0, 0, 0.08) !important;
             }
 
-            /* 3. Arreglar la sección de "Conectado como" para que tenga el mismo color y se lea nítido */
             .sb-sidenav-dark .sb-sidenav-footer {
                 background-color: rgba(0, 0, 0, 0.08) !important;
                 color: #1f2937 !important;
             }
 
-            /* 4. Elementos de la barra superior (Navbar) */
             .sb-topnav .navbar-brand,
             .sb-topnav .nav-link,
             .sb-topnav .btn-link {
@@ -107,7 +103,7 @@
                         <li><a class="dropdown-item" href="#!">Registro de Actividad</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li>
-                            <!-- Formulario de Cierre de Sesión Seguro (POST) -->
+                        
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <button type="submit" class="dropdown-item text-danger">Cerrar Sesión</button>
@@ -126,7 +122,6 @@
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Principal</div>
                             
-                            <!-- Enlace Activo Dinámico para el Dashboard -->
                             <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt text-warning"></i></div>
                                 Dashboard Gerencial
@@ -160,11 +155,9 @@
                 </nav>
             </div>
 
-            <!-- CONTENIDO PRINCIPAL DINÁMICO -->
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4 mt-4">
-                        <!-- Alertas Flash de Éxito -->
                         @if (session('success'))
                             <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
                                 <i class="fas fa-check-circle me-2"></i>{{ session('success') }}
@@ -172,12 +165,10 @@
                             </div>
                         @endif
 
-                        <!-- Aquí se inyectan dinámicamente las vistas hijas de tus módulos -->
                         @yield('contenido')
                     </div>
                 </main>
 
-                <!-- PIE DE PÁGINA INSTITUCIONAL -->
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
