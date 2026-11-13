@@ -18,7 +18,7 @@ class DashboardController extends Controller
         $totalEmpleados = empleados::where('estado', 'Activo')->count();
 
         $valorInventario = insumos::all()->sum(function ($insumo) {
-            return ($insumo->stock ?? $insumo->cantidad ?? 0) * ($insumo->precio ?? 0);
+            return ($insumo->inventario ?? 0) * ($insumo->precio ?? 0);
         });
 
         return view('dashboard.index', compact(
